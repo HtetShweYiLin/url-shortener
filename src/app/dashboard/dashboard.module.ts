@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { UrlListComponent } from './components/url-list/url-list.component';
 import { ShortenUrlComponent } from './components/shorten-url/shorten-url.component';
 
+import { ShortenUrlService } from 'src/app/dashboard/services/shorten-url.service';
 
 @NgModule({
   declarations: [HomeComponent, UrlListComponent, ShortenUrlComponent],
@@ -14,6 +15,9 @@ import { ShortenUrlComponent } from './components/shorten-url/shorten-url.compon
     CommonModule,
     HttpClientModule,
     DashboardRoutingModule
+  ],
+  providers: [
+    ShortenUrlService
   ]
 })
 export class DashboardModule { }

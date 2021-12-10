@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShortenUrlService } from 'src/app/dashboard/services/shorten-url.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _shortenUrlService: ShortenUrlService) { }
 
   ngOnInit() {
+    this.getAllShortenUrls();
+  }
+
+  getAllShortenUrls() {
+    this._shortenUrlService.getAllUrls().subscribe(res => {
+      console.log("res",res);
+    })
   }
 
 }
