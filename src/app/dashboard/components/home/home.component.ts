@@ -7,6 +7,7 @@ import { ShortenUrlService } from 'src/app/dashboard/services/shorten-url.servic
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent implements OnInit {
+  public shortenUrlList;
 
   constructor(private _shortenUrlService: ShortenUrlService) { }
 
@@ -17,6 +18,7 @@ export class HomeComponent implements OnInit {
   getAllShortenUrls() {
     this._shortenUrlService.getAllUrls().subscribe(res => {
       console.log("res",res);
+      this.shortenUrlList = res;
     })
   }
 
