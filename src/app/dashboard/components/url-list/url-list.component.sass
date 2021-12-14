@@ -1,23 +1,28 @@
-@mixin col
-  padding-right: 20px
+$col_spacing: 40px
 
 @mixin truncate
   white-space: nowrap
   overflow: hidden
   text-overflow: ellipsis
 
+.col-wrapper
+  padding: 10px 0px
+
 .first-col
-  width: 53%
-  @include truncate
-  @include col
+  width: 14%
+  padding-right: $col_spacing
 
 
 .second-col
-  width: 42%
+  width: 52%
+  padding-right: $col_spacing
   @include truncate
-  @include col
 
 
 .third-col
-  width: 5%
-  @include col
+  width: 34%
+  a
+    padding-right: 5px
+    @include truncate
+
+

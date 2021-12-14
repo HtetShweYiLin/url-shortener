@@ -1,15 +1,18 @@
 <div>
-  <div class="d-flex" *ngFor="let url of urlList">
+  <div class="d-flex col-wrapper" *ngFor="let url of urlList">
     <div class="first-col">
-      {{ url.longUrl }}
+      {{ url.date | date: 'MMM d, y' }}
     </div>
     <div class="second-col">
-      {{
-        url.shortUrl
-      }}
+      {{ url.longUrl }}
     </div>
-    <div class="third-col">
-      <i class="far fa-copy"></i>
+    <div class="d-flex justify-content-between third-col">
+      <a>
+        {{ url.shortUrl }}
+      </a>
+      <div>
+        <i class="far fa-copy"></i>
+      </div>
     </div>
   </div>
 </div>
