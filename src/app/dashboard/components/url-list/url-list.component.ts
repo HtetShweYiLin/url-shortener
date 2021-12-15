@@ -13,4 +13,8 @@ export class UrlListComponent implements OnInit {
   ngOnInit() {
   }
 
+  copyShortUrl(shortUrl) {
+    navigator.clipboard.writeText(shortUrl)
+  }
+
 }

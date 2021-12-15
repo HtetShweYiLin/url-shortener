@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-shorten-url',
@@ -6,7 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shorten-url.component.sass']
 })
 export class ShortenUrlComponent implements OnInit {
-  public longUrl:string = '';
+  @Output() onClickBtn = new EventEmitter<any>();
+
+  public option = 1;
+  public longUrl = '';
+  public urlObj = {
+    'type': 1,
+    'longUrl': ''
+  }
+
   constructor() { }
 
   ngOnInit() {
@@ -14,6 +22,18 @@ export class ShortenUrlComponent implements OnInit {
 
   onKeyUp(url) {
     this.longUrl = url;
+  }
+
+  handleChange($event) {
+    this.option = $event.target.value;
+    console.log('handleChange',this.option);
+  }
+
+  onClickButton() {
+    this.urlObj.type = this.option;
+    this.urlObj.longUrl = this.longUrl;
+    console.log("onClickButton",this.urlObj);
+    this.onClickBtn.emit(this.urlObj);
   }
 
 }

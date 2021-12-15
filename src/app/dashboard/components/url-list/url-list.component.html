@@ -1,5 +1,5 @@
 <div>
-  <div class="d-flex col-wrapper" *ngFor="let url of urlList">
+  <div class="text-c300 caption-bold d-flex col-wrapper" *ngFor="let url of urlList">
     <div class="first-col">
       {{ url.date | date: 'MMM d, y' }}
     </div>
@@ -7,11 +7,11 @@
       {{ url.longUrl }}
     </div>
     <div class="d-flex justify-content-between third-col">
-      <a>
+      <a class="text-s700 shorturl-link" href="{{url.shortUrl}}">
         {{ url.shortUrl }}
       </a>
       <div>
-        <i class="far fa-copy"></i>
+        <i class="far fa-copy text-c100 copy-btn" (click)="copyShortUrl(url.shortUrl)"></i>
       </div>
     </div>
   </div>

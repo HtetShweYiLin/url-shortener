@@ -22,4 +22,12 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  shortenUrl($event) {
+    console.log("shortenUrl",$event);
+    this._shortenUrlService.shortenUrl($event).subscribe(res => {
+      console.log("res",res);
+      this.getAllShortenUrls();
+    })
+  }
+
 }

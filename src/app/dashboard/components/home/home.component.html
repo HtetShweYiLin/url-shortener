@@ -1,7 +1,7 @@
-<div class="url-shortener-wrapper">
-  <div>
+<div class="url-shortener-container">
+  <div class="text-s700 h2-strong">
     Shortly
   </div>
-  <app-shorten-url></app-shorten-url>
+  <app-shorten-url (onClickBtn)="shortenUrl($event)"></app-shorten-url>
   <app-url-list [urlList]="shortenUrlList"></app-url-list>
 </div>

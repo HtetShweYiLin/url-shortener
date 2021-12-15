@@ -23,4 +23,17 @@ export class ShortenUrlService {
       return result;
     }));
   }
+
+  shortenUrl(data) {
+    let url = this.baseurl + '/shorten';
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      })
+    };
+    return this.http.post(url, data, httpOptions).pipe(map((res:Response) => {
+      let result = res;
+      return result;
+    }));
+  }
 }
