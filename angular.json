@@ -129,8 +129,13 @@
               "devServerTarget": "url-shortener:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "url-shortener"
 }
