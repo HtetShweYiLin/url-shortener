@@ -12,11 +12,11 @@ export class HomeComponent implements OnInit {
   constructor(private _shortenUrlService: ShortenUrlService) { }
 
   ngOnInit() {
-    this.getAllShortenUrls();
+    this.getPublicShortenUrls();
   }
 
-  getAllShortenUrls() {
-    this._shortenUrlService.getAllUrls().subscribe(res => {
+  getPublicShortenUrls() {
+    this._shortenUrlService.getAllPublicUrls().subscribe(res => {
       console.log("res",res);
       this.shortenUrlList = res;
     })
@@ -26,7 +26,9 @@ export class HomeComponent implements OnInit {
     console.log("shortenUrl",$event);
     this._shortenUrlService.shortenUrl($event).subscribe(res => {
       console.log("res",res);
-      this.getAllShortenUrls();
+      this.getPublicShortenUrls();
+    },err => {
+      console.log(err);
     })
   }
 

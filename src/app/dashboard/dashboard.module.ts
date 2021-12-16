@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { HomeComponent } from './components/home/home.component';
@@ -14,6 +15,8 @@ import { ShortenUrlService } from 'src/app/dashboard/services/shorten-url.servic
   imports: [
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
     DashboardRoutingModule
   ],
   providers: [
